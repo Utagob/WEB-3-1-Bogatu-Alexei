@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: #4B352A;
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+
+    padding-left: 10px;
+}
+
+nav img{
+    width: 65px;
+    height: 65px;
+}
+
+nav p{
+    font-size: 30px;
+    font-family:'Courier New', Courier, monospace;
+    color: #CBCBCB;
+}
