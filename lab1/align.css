@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+}
+
+/*Navigation Bar*/
+nav{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+#menuButton{
+    width: 40px;
+    height: 40px;
+}
+
+#menuButton:hover{
+    cursor: pointer;
+}
+
+#logo{
+    width: auto;
+    height: 65px;
+}
+
+#theme{
+    width: 40px;
+    height: 40px;
+}
+
+#theme:hover{
+    cursor: pointer;
+}
+
+/*HeroSection*/
+#heroSection{
+    padding: 10px;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.title{
+    margin: 0;
+
+    font-family: "Kameron";
+    font-size: 60px;
+
+    grid-column: 1/2;
+}
+
+.qoute{
+    font-family: "Kumbh sans", sans-serif;
+    font-size: 20px;
+
+    grid-column: 1/2;
+
+    text-align: right;
+    justify-self: flex-end;
+}
+
+.heroSectionButton{
+    border-radius: 20px;
+    border: 0;
+
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+
+    box-shadow: 8px 8px 4px rgb(0, 0, 0, 0.25);
+
+    font-family: "Kameron";
+    font-size: 20px;
+
+    grid-column: 1/2;
+}
+
+.heroSectionButton:hover{
+    cursor: pointer;
+}
+
+.photo-steak{
+    width: 90%;
+    height: auto;
+
+    border-radius: 20px;
+
+    grid-column: 2/3;
+    grid-row: 1/4;
+    justify-self: center;
+}

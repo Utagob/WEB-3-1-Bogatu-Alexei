@@ -1,0 +1,27 @@
+:root{
+    --nav-background: #4B352A;
+    --bg-color1: #E9DBA6;
+    --text-color1: #4B352A;
+    --hsb-bg-color: #B2CD9C;
+}
+
+nav{
+    background-color: var(--nav-background);
+}
+
+#heroSection{
+    background-color: var(--bg-color1);
+}
+
+.title{
+    color: var(--text-color1);
+}
+
+.qoute{
+    color: var(--text-color1);
+}
+
+.heroSectionButton{
+    color: var(--text-color1);
+    background-color: var(--hsb-bg-color);
+}
