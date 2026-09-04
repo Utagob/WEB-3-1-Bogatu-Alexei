@@ -37,7 +37,7 @@ nav{
 
 /*HeroSection*/
 #heroSection{
-    padding: 10px;
+    padding: 20px;
     display: grid;
 
     grid-template-columns: 1fr 1fr;
@@ -76,10 +76,15 @@ nav{
     font-size: 20px;
 
     grid-column: 1/2;
+
+    transform-origin: top left;
+    transition: transform 0.3s ease; 
 }
 
 .heroSectionButton:hover{
     cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 0;
 }
 
 .photo-steak{
@@ -91,4 +96,9 @@ nav{
     grid-column: 2/3;
     grid-row: 1/4;
     justify-self: center;
+}
+
+/*About Section*/
+#aboutSection{
+    
 }

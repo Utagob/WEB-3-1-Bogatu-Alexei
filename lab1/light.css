@@ -1,10 +1,14 @@
 :root{
     --nav-background: #4B352A;
     --bg-color1: #E9DBA6;
+    --bg-color2: #CA7842;
     --text-color1: #4B352A;
+    --text-color2: #F0F2BD;
     --hsb-bg-color: #B2CD9C;
+    --hsb-bg-color-hover: #659141;
 }
 
+/*nav*/
 nav{
     background-color: var(--nav-background);
 }
@@ -21,7 +25,18 @@ nav{
     color: var(--text-color1);
 }
 
+/*hero section*/
 .heroSectionButton{
     color: var(--text-color1);
     background-color: var(--hsb-bg-color);
+}
+
+.heroSectionButton:hover{
+    background-color: var(--hsb-bg-color-hover);
+    color: var(--text-color2);
+}
+
+/*About Section*/
+#aboutSection{
+    background-color: var(--bg-color1);
 }
