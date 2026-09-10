@@ -1,35 +1,228 @@
+:root{
+    --height: 800px;
+    --title-size: 150px;
+    --alert-size: 10px;
+    --hero-text-size: 30px;
+    --cTittle-size: 80px;
+    --desc-size: 20px;
+}
+
+.text{
+    color: #EBF1F8;
+    margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     padding: 0;
+    padding-left: 60px;
 }
 
+
 header{
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     background-color: #26272E;
 
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 
-    height: 60px;
-    width: 100%;
+    height: 100vh;
+    width: 60px;
+    z-index: 100;
     padding: 5px;
+    padding-top: 20px;
 }
 
 header img{
-    width: 50px;
-    height: 50px;
-    transition: transform 1 ease;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s ease;
 }
 
 header img:hover{
     cursor: pointer;
     transform: scale(1.2);
-    margin: 5px
 }
 
+#hero-section{
+    background-color: #191F32;
 
-p{
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    height: var(--height);
+    width: 100%;
+
+    padding: 20px;
+}
+
+#title{
+    font-size: var(--title-size);
+}
+
+#alert{
+    font-size: var(--alert-size);
+}
+
+#hero-text{
+    margin-top: 50px; 
+    font-size: var(--hero-text-size);
+}
+
+.country{
+    display: grid;
+    grid-template-areas: 
+    "flag" "title"
+    "list" "description";
+
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    padding-bottom: 25px;
+
+    background-color: #3e3e3e;
+}
+
+.country-name{
+    grid-area: "title";
+    font-size: var(--cTittle-size);
+}
+
+.description{
+    grid-area: "description";
+    font-size: var(--desc-size);
+}
+
+#moldova-table{
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+}
+
+#moldova-table td{
+    width: 133px;
+    height: 200px;
+}
+
+.list{
+    grid-area: "list";
+    font-size: var(--desc-size);
+}
+
+#md1{
+    background-color: #0046ae;
+}
+
+#md2{
+    background-color: #ffd200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#md2 img{
+    width: 100px;
+    height: auto;
+}
+
+#md3{
+    background-color: #cc092f;
+}
+
+.seeMore{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+    text-decoration: none;
+
+    font-size: var(--desc-size);
+}
+
+.seeMore svg{
+    width: 25px;
+    height: auto;
+}
+
+.seeMore:hover *{
+    cursor: pointer;
+    color: #4444ff;
+    text-decoration: underline;
+}
+
+#norway-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 400px;
+  height: 200px;
+  padding: 0;
+  margin: 10px;
+}
+
+#norway-table td {
+  padding: 0;
+  margin: 0;
+}
+
+.norway-red { background-color: #BA0C2F; }
+.norway-white { background-color: #FFFFFF; }
+.norway-blue { background-color: #00205B; }
+
+#norway-table tr td:nth-child(1) { width: 27.2727%; }
+#norway-table tr td:nth-child(2) { width: 4.5454%; }
+#norway-table tr td:nth-child(3) { width: 9.0909%; }
+#norway-table tr td:nth-child(4) { width: 4.5454%; }
+#norway-table tr td:nth-child(5) { width: 54.5454%; }
+
+#norway-table tr:nth-child(1) { height: 37.5%; }
+#norway-table tr:nth-child(2) { height: 6.25%; }
+#norway-table tr:nth-child(3) { height: 12.5%; }
+#norway-table tr:nth-child(4) { height: 6.25%; }
+#norway-table tr:nth-child(5) { height: 37.5%; }
+
+#sweden-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 400px;
+  height: 200px;
+  padding: 0;
+  margin: 10px;
+}
+
+#sweden-table td {
+  padding: 0;
+  margin: 0;
+}
+
+.sweden-yellow { background-color: #FFCD00; }
+.sweden-blue { background-color: #005583; }
+
+#sweden-table tr td:nth-child(1) { width: 27.2727%; }
+#sweden-table tr td:nth-child(2) { width: 18.1819%; }
+#sweden-table tr td:nth-child(3) { width: 54.5454%; } 
+
+#sweden-table tr:nth-child(1) { height: 37.5%; }
+#sweden-table tr:nth-child(2) { height: 25%; }
+#sweden-table tr:nth-child(3) { height: 37.5%; }
+
+footer{
+    height: 50px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #191F32;
 }
