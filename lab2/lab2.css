@@ -12,14 +12,12 @@
     margin: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body{
     margin: 0;
     padding: 0;
-    padding-left: 60px;
+    padding-left: 80px;
+
+    background-color: #191F32;
 }
 
 
@@ -64,7 +62,7 @@ header img:hover{
     height: var(--height);
     width: 100%;
 
-    padding: 20px;
+    padding: 20px 0;
 }
 
 #title{
@@ -88,7 +86,7 @@ header img:hover{
 
     height: 100%;
     width: 100%;
-    padding: 15px;
+    padding: 10px 0;
     padding-bottom: 25px;
 
     background-color: #3e3e3e;
