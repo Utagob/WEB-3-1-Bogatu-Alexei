@@ -99,28 +99,34 @@ scissorsSelect.addEventListener("click", (e)=>{
     RockPaperScissors(1);
 })
 
+const rounds = document.createElement('p');
+rounds.setAttribute("class", "points");
+rounds.innerText = "Rounds: " + (gameScore.player + gameScore.computer + gameScore.draws);
+
 const playerScore = document.createElement('p');
 playerScore.setAttribute("class", "points");
 playerScore.innerText = "Player's score: " + gameScore.player;
 
 const pcScore = document.createElement('p');
 pcScore.setAttribute("class", "points");
-pcScore.innerText = "PC's score: " + gameScore.player;
+pcScore.innerText = "PC's score: " + gameScore.computer;
 
 const drawScore = document.createElement('p');
 drawScore.setAttribute("class", "points");
-drawScore.innerText = "Draws: " + gameScore.player;
+drawScore.innerText = "Draws: " + gameScore.draws;
 
 const result = document.createElement('result');
 result.setAttribute("class", "result");
 
 const scoreBoard = document.getElementById("score");
+scoreBoard.appendChild(rounds);
 scoreBoard.appendChild(playerScore);
 scoreBoard.appendChild(pcScore);
 scoreBoard.appendChild(drawScore);
 scoreBoard.appendChild(result);
 
 const updateScore = () => {
+    rounds.innerText = "Rounds: " + (gameScore.player + gameScore.computer + gameScore.draws);
     playerScore.innerText = "Player's score: " + gameScore.player;
     pcScore.innerText = "PC's score: " + gameScore.computer;
     drawScore.innerText = "Draws: " + gameScore.draws;
