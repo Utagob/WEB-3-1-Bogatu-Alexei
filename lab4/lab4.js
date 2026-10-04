@@ -43,20 +43,27 @@ for(let i = 0; i < fructe.length; i++) {
 }
 
 let selectedFruits = [];
-
 const listSection = document.getElementById("list");
+
 const addSelectedFruits = () => {
-    if(listSection.hasChildNodes()) {
-        listSection.removeChild(listSection.firstChild);
+    if(listSection.hasChildNodes()) listSection.removeChild(listSection.firstChild);
+    
+    if(selectedFruits.length !== 0){
+        const ul = document.createElement("ul");
+        list.appendChild(ul);
+        for(let i = 0; i < selectedFruits.length; i++) {
+            const li = document.createElement("li");
+            li.textContent = selectedFruits[i];
+            ul.appendChild(li);
+        }
+    } else {
+        const p = document.createElement("p");
+        p.textContent = "Lista este goală!";
+        list.appendChild(p);
     }
-    const ul = document.createElement("ul");
-    list.appendChild(ul);
-    for(let i = 0; i < selectedFruits.length; i++) {
-        const li = document.createElement("li");
-        li.textContent = selectedFruits[i];
-        ul.appendChild(li);
-    }
+    
 }
+addSelectedFruits();
 
 const addFirst = (a) => {
     selectedFruits.unshift(a);
@@ -67,3 +74,23 @@ const addLast = (a) => {
     selectedFruits.push(a);
     addSelectedFruits();
 }
+
+const delFirst = () => {
+    selectedFruits.shift();
+    addSelectedFruits();
+}
+
+const delLast = () => {
+    selectedFruits.pop();
+    addSelectedFruits();
+}
+
+const delB1 = document.getElementById("delF");
+delB1.addEventListener("click", () => {
+    delFirst();
+})
+
+const delB2 = document.getElementById("delL");
+delB2.addEventListener("click", () => {
+    delLast();
+})

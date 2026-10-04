@@ -1,0 +1,17 @@
+body{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#catalogElec{
+    width: 70%;
+    padding-left: 10px;
+}
+
+#functions{
+    display: flex;
+    flex-direction: column;
+}
