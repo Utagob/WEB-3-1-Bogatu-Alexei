@@ -2,7 +2,13 @@ body{
     display: flex;
     flex-direction: row;
     height: 100vh;
-    margin: 0;
+    padding-left: 10px;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 #section{

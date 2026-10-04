@@ -59,6 +59,7 @@ function stergeElev() {
         if(students[i].nume.toLowerCase() === name.value.toLowerCase())
             students.splice(i, 1);  
     }
+    name.value = "";
     afiseazaElevi();
 }
 
