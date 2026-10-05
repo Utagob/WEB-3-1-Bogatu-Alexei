@@ -7,6 +7,17 @@ body{
     font-family: 'Courier New', Courier, monospace;
 }
 
+.method{
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 button:hover{
     cursor: pointer;
 }

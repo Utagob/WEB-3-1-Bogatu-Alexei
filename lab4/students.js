@@ -67,17 +67,21 @@ const stergeElevBtn = document.getElementById("delBtn");
 stergeElevBtn.addEventListener("click", stergeElev);
 
 
+
+
 const findResult = document.getElementById("output")
 function cautaElev() {
     const name = document.getElementById("findName");
-    for(let i=0; i<students.length; i++){
-        if(students[i].nume.toLowerCase() === name.value.toLowerCase()){
-            findResult.innerText = "Elev găsit!\n\n" + "Nume: " + students[i].nume + "\n" + "Varsta: " + students[i].varsta + "\n" + "Nota: " + students[i].nota + "\n\n";
-            break;
-        } else {
-            findResult.innerText = "Elevul nu a fost găsit!";
-        }
+
+    const found = students.find((student) => student.nume.toLowerCase() === name.value.toLowerCase());
+    console.log(found);
+
+    if (found) {
+        findResult.innerText = "Elev găsit!\n\nNume: " + found.nume + "\nVarsta: " + found.varsta + "\nNota: " + found.nota + "\n\n";
+    } else {
+        findResult.innerText = "Elevul nu a fost găsit!";
     }
+
     name.value = "";
 }
 
