@@ -11,37 +11,6 @@ let orase = ["Chisinau", "Iasi", "Balti", "Stefan Voda"];
     orase.shift();
     console.log(orase);
 
-const sectieFructe = document.getElementById("fructe");
-
-const FructToPage = (fruct) => {
-    const div = document.createElement("div");
-    div.className = "fruct";
-
-    const button1 = document.createElement("button");
-    button1.textContent = "Adauga la Inceput";
-    button1.addEventListener("click", () => {
-        addFirst(fruct);
-    });
-
-    const p = document.createElement("p");
-    p.textContent = fruct;
-
-    const button2 = document.createElement("button");
-    button2.textContent = "Adauga la Sfarsit";
-    button2.addEventListener("click", () => {
-        addLast(fruct);
-    });
-
-    div.appendChild(button1);
-    div.appendChild(p);
-    div.appendChild(button2);
-    sectieFructe.appendChild(div);
-}
-
-for(let i = 0; i < fructe.length; i++) {
-    FructToPage(fructe[i]);
-}
-
 let selectedFruits = [];
 const listSection = document.getElementById("list");
 
@@ -65,15 +34,30 @@ const addSelectedFruits = () => {
 }
 addSelectedFruits();
 
-const addFirst = (a) => {
-    selectedFruits.unshift(a);
+const fruitValue = () => {
+    const fruitInput = document.getElementById("fruitInput");
+    return fruitInput.value.toLowerCase();
+}
+
+const addFirst = () => {
+    selectedFruits.unshift(fruitValue());
     addSelectedFruits();
 }
 
-const addLast = (a) => {
-    selectedFruits.push(a);
+const addLast = () => {
+    selectedFruits.push(fruitValue());
     addSelectedFruits();
 }
+
+const addB1 = document.getElementById("addF");
+addB1.addEventListener("click", () => {
+    addFirst();
+})
+
+const addB2 = document.getElementById("addL");
+addB2.addEventListener("click", () => {
+    addLast();
+})
 
 const delFirst = () => {
     selectedFruits.shift();
