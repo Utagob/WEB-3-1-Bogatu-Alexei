@@ -24,6 +24,35 @@
         <input placeholder="Clasa" type="text" id="newClasa">
         <button id="submitNewElev" onclick="addStudent()">Elev +</button>
       </div>
+      <div id="styles">
+        <label for="justify-content">Justify-content</label>
+        <select name="justify-content" id="justify-content">
+          <option value="flex-start">Flex-start</option>
+          <option value="center">Center</option>
+          <option value="flex-end">Flex-end</option>
+          <option value="space-between">Space-between</option>
+          <option value="space-around">Space-around</option>
+          <option value="space-evenly">Space-evenly</option>
+        </select>
+        <label for="align-content">Align-content</label>
+        <select name="align-content" id="align-content">
+          <option value="stretch">Stretch</option>
+          <option value="flex-start">Flex-start</option>
+          <option value="center">Center</option>
+          <option value="flex-end">Flex-end</option>
+        </select>
+        <div class="flex">
+          <p>Flex-wrap</p>
+          <input type="checkbox" id="wrap" checked>
+        </div>
+        <div class="unflex">
+          <div class="flex">
+            <p>Gap:</p>
+            <input type="number" id="numberIn">
+          </div>
+          <input type="submit" id="submitNumber">
+        </div>
+      </div>
     </div>
 
     <script src="lab5.js"></script>

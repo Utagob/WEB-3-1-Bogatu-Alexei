@@ -9,6 +9,18 @@ p{
     font-family: "Montserrat";
 }
 
+label{
+    font-family: "Montserrat";
+}
+
+option{
+    font-family: "Montserrat";
+}
+
+input{
+    font-family: "Montserrat";
+}
+
 button:hover{
     cursor: pointer;
 }
@@ -19,10 +31,11 @@ button:hover{
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    min-height: 96vh;
+    gap: 15px;
 }
 
 .student{
-    margin: 5px;
     width: 260px;
     height: 180px;
 
@@ -114,7 +127,11 @@ button:hover{
 
     background-color: #b2b2b2;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: -2px 0 20px #000000;
 }
 
 #addElev{
@@ -139,4 +156,36 @@ button:hover{
 
 #submitNewElev{
     border-radius: 15px;
+}
+
+#styles{
+    margin: 0 0 15px 0;
+    padding: 10px 0 10px 15px;
+    width: 85%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+
+    background-color: #989898;
+    border-radius: 15px;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.unflex{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+#numberIn{
+    margin-left: 10px;
+    width: 120px;
 }

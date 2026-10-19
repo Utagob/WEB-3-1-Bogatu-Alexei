@@ -142,3 +142,28 @@ function deleteStudent(e){
     }
     addStudentsHTML();
 }
+
+const justifyValue = document.getElementById("justify-content");
+justifyValue.addEventListener("change", () => {
+    sl.style.justifyContent = justifyValue.value;
+})
+
+const alignValue = document.getElementById("align-content");
+alignValue.addEventListener("change", () => {
+    sl.style.alignContent = alignValue.value;
+    sl.style.alignItems = alignValue.value;
+})
+
+const wrapValue = document.getElementById("wrap");
+wrapValue.addEventListener("change", () => {
+    sl.style.flexWrap = wrapValue.checked ? "wrap" : "nowrap";
+})
+
+const gapValue = document.getElementById("numberIn");
+const submitGap = document.getElementById("submitNumber");
+
+submitGap.addEventListener("click", () => {
+    if (gapValue.value !== "") {
+        sl.style.gap = gapValue.value + "px";
+    }
+});
