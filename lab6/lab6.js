@@ -2,33 +2,65 @@ let students = JSON.parse(localStorage.getItem("students")) || [];
 const content = document.getElementsByClassName("content")[0];
 
 function addStudent(e){
-    if (e) e.preventDefault();
+    if(e) e.preventDefault();
 
-    const lastnameA = document.getElementById("lastname");
-    const firstnameA = document.getElementById("firstname");
-    const ageA = document.getElementById("age");
-    const classA = document.getElementById("class");
-    const emailA = document.getElementById("email");
+    const lastname = document.getElementById("lastname");
+    const firstname = document.getElementById("firstname");
+    const age = document.getElementById("age");
+    const clas = document.getElementById("class");
+    const email = document.getElementById("email");
 
-    if(lastnameA.value !== "" && firstnameA.value !== "" && ageA.value !== "" && emailA.value !== "" && classA.value !== ""){
+    const fname = firstname.value.trim();
+    const lname = lastname.value.trim();
+    const clasC = clas.value.trim();
+
+    if(fname === "") EmptyError("firstname");
+
+    if(lname === "") EmptyError("lastname");
+
+    if(age.value === "") EmptyError("age");
+        else if(age.value < 15 || age.value > 99) InvalidAgeError("age");
+
+    if(clasC === "") EmptyError("class");
+
+    if(email.value === "") EmptyError("email");
+        else if(!valid(email.value)) InvalidEmailError("email");
+
+    if(firstname.value !== "" && lastname.value !== "" && 
+        age.value !== "" && clas.value !== "" && 
+        age.value >= 15 && age.value <= 99 &&
+        email.value !== "" && valid(email.value)){
         let student = {
-            firstname: firstnameA.value,
-            lastname: lastnameA.value,
-            age: ageA.value,
-            class: classA.value,
-            email: emailA.value,
+            firstname: firstname.value,
+            lastname: lastname.value,
+            age: age.value,
+            class: clas.value,
+            email: email.value,
             date: Date.now()
         }
         students.push(student);
         localStorage.setItem("students", JSON.stringify(students));
         loadOnScreen();
-    }
 
-    lastnameA.value = "";
-    firstnameA.value = "";
-    ageA.value = "";
-    emailA.value = "";
-    classA.value = "";
+        lastname.value = "";
+        firstname.value = "";
+        age.value = "";
+        email.value = "";
+        clas.value = "";
+
+        const offcanvasEl = document.getElementById("offcanvasAddStudent");
+        const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasEl);
+        if (offcanvasInstance) offcanvasInstance.hide();
+    }
+}
+
+["firstname", "lastname", "age", "class", "email"].forEach(id => {
+    document.getElementById(id).addEventListener("input", () => ClearError(id));
+});
+
+function valid(email) {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
 }
 
 const stdSub = document.getElementById("studentSubmit");
@@ -91,6 +123,51 @@ function deleteStudent(e){
     students = students.filter(student => student.date !== e);
     localStorage.setItem("students", JSON.stringify(students));
     loadOnScreen();
+}
+
+const capitalize = (e) => {
+    return e.charAt(0).toUpperCase() + e.slice(1);
+}
+
+function ErrorOnPage(e){
+    const div = document.getElementById(e + "Div");
+    div.classList.add("p-0", "border-start", "border-danger", "border-4", "on");
+
+    const input = div.getElementsByTagName("input")[0];
+    input.classList.add("rounded-0");
+
+    const p = div.getElementsByTagName("p")[0];
+    p.classList.add("text-sm", "text-danger", "m-0", "p-1", "alert", "alert-danger", "rounded-0");
+}
+
+function EmptyError(e){
+    ErrorOnPage(e);
+    const p = document.getElementById(e + "Div").getElementsByTagName("p")[0];
+    p.innerHTML = '<i class="bi bi-exclamation-triangle"></i>  ' + capitalize(e) + " field is empty";
+}
+
+function InvalidEmailError(e){
+    ErrorOnPage(e);
+    const p = document.getElementById(e + "Div").getElementsByTagName("p")[0];
+    p.innerHTML = '<i class="bi bi-exclamation-triangle"></i>  ' + capitalize(e) + " is invalid";
+}
+
+function InvalidAgeError(e){
+    ErrorOnPage(e);
+    const p = document.getElementById(e + "Div").getElementsByTagName("p")[0];
+    p.innerHTML = '<i class="bi bi-exclamation-triangle"></i>  ' + capitalize(e) + " must be 15 or older";
+}
+
+function ClearError(e) {
+    const div = document.getElementById(e + "Div");
+    div.classList.remove("p-0", "border-start", "border-danger", "border-4", "on");
+
+    const input = div.getElementsByTagName("input")[0];
+    input.classList.remove("rounded-0");
+
+    const p = div.getElementsByTagName("p")[0];
+    p.classList.remove("text-sm", "text-danger", "m-0", "p-1", "alert", "alert-danger", "rounded-0");
+    p.innerHTML = "";
 }
 
 loadOnScreen();
